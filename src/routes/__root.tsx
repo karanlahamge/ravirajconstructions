@@ -158,6 +158,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingContact />
       </div>
     </QueryClientProvider>
   );
