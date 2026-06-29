@@ -15,6 +15,7 @@ import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GuidesBestNeighborhoodsNashikRouteImport } from './routes/guides/best-neighborhoods-nashik'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,6 +47,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesBestNeighborhoodsNashikRoute =
+  GuidesBestNeighborhoodsNashikRouteImport.update({
+    id: '/guides/best-neighborhoods-nashik',
+    path: '/guides/best-neighborhoods-nashik',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/reviews': typeof ReviewsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/best-neighborhoods-nashik': typeof GuidesBestNeighborhoodsNashikRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +70,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/reviews': typeof ReviewsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/best-neighborhoods-nashik': typeof GuidesBestNeighborhoodsNashikRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +80,7 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/reviews': typeof ReviewsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/best-neighborhoods-nashik': typeof GuidesBestNeighborhoodsNashikRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +91,16 @@ export interface FileRouteTypes {
     | '/projects'
     | '/reviews'
     | '/sitemap.xml'
+    | '/guides/best-neighborhoods-nashik'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/projects' | '/reviews' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/reviews'
+    | '/sitemap.xml'
+    | '/guides/best-neighborhoods-nashik'
   id:
     | '__root__'
     | '/'
@@ -91,6 +109,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/reviews'
     | '/sitemap.xml'
+    | '/guides/best-neighborhoods-nashik'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -100,6 +119,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ReviewsRoute: typeof ReviewsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  GuidesBestNeighborhoodsNashikRoute: typeof GuidesBestNeighborhoodsNashikRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -146,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/best-neighborhoods-nashik': {
+      id: '/guides/best-neighborhoods-nashik'
+      path: '/guides/best-neighborhoods-nashik'
+      fullPath: '/guides/best-neighborhoods-nashik'
+      preLoaderRoute: typeof GuidesBestNeighborhoodsNashikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -156,6 +183,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ReviewsRoute: ReviewsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  GuidesBestNeighborhoodsNashikRoute: GuidesBestNeighborhoodsNashikRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -19,6 +19,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/projects", changefreq: "monthly", priority: "0.9" },
           { path: "/reviews", changefreq: "monthly", priority: "0.7" },
           { path: "/contact", changefreq: "yearly", priority: "0.8" },
+          { path: "/guides/best-neighborhoods-nashik", changefreq: "monthly", priority: "0.8" },
         ];
 
         const urls = entries.map((e) =>
