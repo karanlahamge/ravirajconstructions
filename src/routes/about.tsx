@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Led by Ravindra Rajguru, Raviraj Constructions is a Nashik builder & developer known for quality craftsmanship, reliable project management and customer-first delivery.",
+          "Led by Ravindra Rajguru, Raviraj Constructions is a Nashik builder known for quality craftsmanship and on-time, customer-first delivery.",
       },
       { property: "og:title", content: "About Raviraj Constructions" },
       {
